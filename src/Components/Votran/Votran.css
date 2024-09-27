@@ -29,7 +29,23 @@
 }
 
 
-.learning-page {
+.learning-page{
+    margin: auto;
+    margin-top: 10vh;
+    height: auto;
+    width: 90vw; /* Set width as percentage */
+    max-width: 1200px;
+    background: white;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.translator-page {
+
     margin: auto;
     text-align: justify;
     margin-top: 10vh;
@@ -45,7 +61,7 @@
     padding: 2rem;
 }
 
-<<<<<<< HEAD
+
 .translator-page .select-lang{
     display: flex;
     flex-direction: row;
@@ -57,7 +73,7 @@
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
-=======
+
 .language-slides {
     display: flex;
     flex-wrap: wrap; /* Allows the slides to wrap into multiple rows */
@@ -84,9 +100,7 @@
     transform: scale(1.05); /* Scale up on hover */
 }
 
-.language-slide:active {
-    background-color: #e0e0e0; /* Darker background on active */
->>>>>>> da6ac3f (Pulled changes for henryBuild)
+
 }
 
 /* Media Queries for responsiveness */
