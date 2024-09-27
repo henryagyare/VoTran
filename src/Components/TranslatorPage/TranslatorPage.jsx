@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import "../Votran/Votran.css";
 
+// Create an object to hold the exported variables
+let exportedVariables = {
+    inputText: "",
+    submitVar: "None",
+};
+
+// Function to get the exported variables
+export const getExportedVariables = () => exportedVariables;
+
 const TranslatorPage = () => {
     const [inputText, setInputText] = useState(""); // State to store input text
+    const [submitVar, setSubmitVar] = useState("None"); // State for submitVar
 
     const translate = () => {
-        // You can use the inputText variable here to perform translation or pass it to another component
         console.log("Input Text:", inputText);
+        setSubmitVar("Translate"); // Update the submitVar state
+        exportedVariables.inputText = inputText; // Update exported inputText
+        exportedVariables.submitVar = submitVar; // Update exported submitVar
     };
 
     return (
@@ -30,4 +42,5 @@ const TranslatorPage = () => {
     );
 };
 
+// Exporting the TranslatorPage component
 export default TranslatorPage;
