@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Votran.css";
 import { data } from "../../assets/data";
 
@@ -17,21 +18,14 @@ const Votran = () => {
 
   let option_array = [Option1, Option2, Option3, Option4];
 
-  const checkAnswer = (element, answer) => {
-    if (lock == false) {
-      if (question.ans == answer) {
-        element.target.classList.add("correct");
-        setLock(true);
-        setScore((prevScore) => {
-          prevScore = prevScore + 1;
-          return prevScore;
-        });
-      } else {
-        element.target.classList.add("wrong");
-        setLock(true);
-        option_array[question.ans - 1].current.classList.add("correct");
-      }
-    }
+  const navigate = useNavigate(); // Use navigate hook
+
+  const beginLearning = () => {
+    navigate("/learning"); // Navigate to the new learning page
+  };
+
+  const translate = () => {
+    navigate("/translator");
   };
 
   const next = () => {
@@ -61,60 +55,8 @@ const Votran = () => {
 
   return (
     <div className="container">
-      <h1>VoTran</h1>
-      <hr />
-      {result ? (
-        <>
-          <h2>
-            You scored {score} out of {data.length}
-          </h2>
-          <button onClick={resetAction}>Reset</button>
-        </>
-      ) : (
-        <>
-          <h2>
-            {index + 1}. {question.question}
-          </h2>
-          <ul>
-            <li
-              ref={Option1}
-              onClick={(element) => {
-                checkAnswer(element, 1);
-              }}
-            >
-              {question.option1}
-            </li>
-            <li
-              ref={Option2}
-              onClick={(element) => {
-                checkAnswer(element, 2);
-              }}
-            >
-              {question.option2}
-            </li>
-            <li
-              ref={Option3}
-              onClick={(element) => {
-                checkAnswer(element, 3);
-              }}
-            >
-              {question.option3}
-            </li>
-            <li
-              ref={Option4}
-              onClick={(element) => {
-                checkAnswer(element, 4);
-              }}
-            >
-              {question.option4}
-            </li>
-          </ul>
-          <button onClick={next}>Next</button>
-          <div className="index">
-            {index + 1} of {data.length} questions
-          </div>
-        </>
-      )}
+      <button onClick={beginLearning}>Begin Learning</button>
+      <button onClick={translate}>Translator</button>
     </div>
   );
 };

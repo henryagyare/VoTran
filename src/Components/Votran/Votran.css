@@ -1,66 +1,76 @@
 .container {
-    width: 640px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 10vh; /* Use viewport height */
+    height: auto; /* Adjust height dynamically */
+    width: 90vw; /* Set width as a percentage of viewport width */
+    max-width: 1200px; /* Optional: limit the maximum width for larger screens */
     background: white;
     color: #262626;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem; /* Use relative units */
     border-radius: 10px;
-    padding: 40px 50px;
+    padding: 2rem; /* Adjust padding to be relative */
 }
 
-.container hr{
-    height: 2px;
-    border: none;
-    background: #707070;
-}
-
-.container  h2{
-    font-size: 27px;
-    font-weight: 500;
+.container button {
     margin: auto;
-}
-
-.container ul li{
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding-left: 15px;
-    border-radius: 8px;
-    border: 1px solid #686868;
-    margin-bottom: 20px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.container button{
-    margin: auto;
-    width: 250px;
-    height: 65px;
+    width: 80%; /* Use percentages for width */
+    max-width: 350px; /* Limit maximum width */
+    height: auto;
+    padding: 1.5rem;
     background: #553f9a;
     color: #fff;
-    font-size: 25px;
+    font-size: 1.5rem; /* Use relative font sizes */
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    text-align: center;
 }
 
-.container .index {
+.learning-page, .translator-page {
     margin: auto;
-    font-size: 18px;
+    margin-top: 10vh;
+    height: auto;
+    width: 90vw; /* Set width as percentage */
+    max-width: 1200px;
+    background: white;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 10px;
+    padding: 2rem;
 }
 
-.container .correct{
-    background: #dffff2;
-    border-color: #00d397;
+
+/* Media Queries for responsiveness */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container, .learning-page, .translator-page {
+        width: 95vw; /* Adjust width for smaller screens */
+        padding: 1.5rem;
+    }
+
+    .container button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
 }
 
-.container .wrong{
-    background: #ffebeb;
-    border-color: #ff4a4a;
+/* Mobile devices */
+@media (max-width: 480px) {
+    .container, .learning-page, .translator-page {
+        width: 95vw;
+        margin-top: 5vh;
+        padding: 1rem;
+    }
+
+    .container button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
 }
-
-
-
