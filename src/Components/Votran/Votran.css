@@ -28,11 +28,13 @@
     text-align: center;
 }
 
-.learning-page, .translator-page {
+
+.learning-page {
     margin: auto;
+    text-align: justify;
     margin-top: 10vh;
     height: auto;
-    width: 90vw; /* Set width as percentage */
+    width: 90vw; /* Set width as a percentage */
     max-width: 1200px;
     background: white;
     color: #262626;
@@ -43,34 +45,47 @@
     padding: 2rem;
 }
 
+.language-slides {
+    display: flex;
+    flex-wrap: wrap; /* Allows the slides to wrap into multiple rows */
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Center align items */
+    margin-top: 20px; /* Space above the slides */
+    height: 66vh; /* Set height to cover 2/3 of the page */
+    padding: 20px; /* Padding around the slides */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.language-slide {
+    background-color: #f0f0f0; /* Light background for the slide */
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(30% - 20px); /* Adjust width to ensure slides are square */
+    height: calc(30% - 20px); /* Set height to match width for square slides */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
+}
+
+.language-slide:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.language-slide:active {
+    background-color: #e0e0e0; /* Darker background on active */
+}
 
 /* Media Queries for responsiveness */
-
-/* Tablets */
 @media (max-width: 768px) {
-    .container, .learning-page, .translator-page {
-        width: 95vw; /* Adjust width for smaller screens */
-        padding: 1.5rem;
-    }
-
-    .container button {
-        width: 100%;
-        padding: 1rem;
-        font-size: 1.25rem;
+    .language-slide {
+        width: calc(45% - 20px); /* Adjust width for tablets */
+        height: calc(45% - 20px); /* Set height to match width for tablets */
     }
 }
 
-/* Mobile devices */
 @media (max-width: 480px) {
-    .container, .learning-page, .translator-page {
-        width: 95vw;
-        margin-top: 5vh;
-        padding: 1rem;
-    }
-
-    .container button {
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.75rem;
+    .language-slide {
+        width: calc(100% - 20px); /* Adjust width for mobile devices */
+        height: calc(100% - 20px); /* Set height to match width for mobile devices */
     }
 }
