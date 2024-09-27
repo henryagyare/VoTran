@@ -1,10 +1,10 @@
 import React from 'react'
-import Quiz from './Components/Quiz/Quiz'
+import Votran from './Components/Votran/Votran'
 
 const App = () => {
   return (
     <div>
-      <Quiz/>
+      <Votran />
     </div>
   )
 }

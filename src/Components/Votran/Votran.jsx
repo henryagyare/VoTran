@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useRef } from "react";
-import "./Quiz.css";
+import "./Votran.css";
 import { data } from "../../assets/data";
 
-const Quiz = () => {
+const Votran = () => {
   let [index, setIndex] = useState(0);
   let [question, setQuestion] = useState(data[index]);
   let [lock, setLock] = useState(false);
@@ -61,7 +61,7 @@ const Quiz = () => {
 
   return (
     <div className="container">
-      <h1>React Quiz App</h1>
+      <h1>VoTran</h1>
       <hr />
       {result ? (
         <>
@@ -119,4 +119,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default Votran;
