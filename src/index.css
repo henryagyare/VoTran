@@ -1,0 +1,12 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(#d8c7ff, #19006c);
+  font-family: 'Poppins', sans-serif; /* Add fallback font */
+}

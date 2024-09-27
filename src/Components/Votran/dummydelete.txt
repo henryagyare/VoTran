@@ -1,0 +1,98 @@
+    <div className="container">
+      <h1>VoTran</h1>
+      <hr />
+      {result ? (
+        <>
+          <h2>
+            You scored {score} out of {data.length}
+          </h2>
+          <button onClick={resetAction}>Reset</button>
+        </>
+      ) : (
+        <>
+          <h2>
+            {index + 1}. {question.question}
+          </h2>
+          <ul>
+            <li
+              ref={Option1}
+              onClick={(element) => {
+                checkAnswer(element, 1);
+              }}
+            >
+              {question.option1}
+            </li>
+            <li
+              ref={Option2}
+              onClick={(element) => {
+                checkAnswer(element, 2);
+              }}
+            >
+              {question.option2}
+            </li>
+            <li
+              ref={Option3}
+              onClick={(element) => {
+                checkAnswer(element, 3);
+              }}
+            >
+              {question.option3}
+            </li>
+            <li
+              ref={Option4}
+              onClick={(element) => {
+                checkAnswer(element, 4);
+              }}
+            >
+              {question.option4}
+            </li>
+          </ul>
+          <button onClick={next}>Next</button>
+          <div className="index">
+            {index + 1} of {data.length} questions
+          </div>
+        </>
+      )}
+    </div>
+
+
+
+.container .index {
+    margin: auto;
+    font-size: 18px;
+}
+
+.container .correct{
+    background: #dffff2;
+    border-color: #00d397;
+}
+
+.container .wrong{
+    background: #ffebeb;
+    border-color: #ff4a4a;
+}
+
+
+.container hr{
+    height: 2px;
+    border: none;
+    background: #707070;
+}
+
+.container  h2{
+    font-size: 27px;
+    font-weight: 500;
+    margin: auto;
+}
+
+.container ul li{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border-radius: 8px;
+    border: 1px solid #686868;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
