@@ -43,6 +43,18 @@
     padding: 2rem;
 }
 
+.translator-page .select-lang{
+    display: flex;
+    flex-direction: row;
+}
+
+.translator-page .select-lang div{
+    margin: auto;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
 
 /* Media Queries for responsiveness */
 
